@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         Menu menu = new Menu();
+        Scene scene = new Scene();
         int choice = 0;
 
         while (player) {
@@ -19,12 +20,25 @@ public class Main {
             choice = s.nextInt();
             switch (choice) {
                 case 1:
-                    menu.mainMenu();
+                    menu.gatherInformation();
                     name = s.next();
+                    System.out.println("Great " + name + "lets get going!");
+                    scene.sceneOne();
+                    choice = s.nextInt();
+                    switch (choice){
+                        case 1:
+                            scene.sceneTwo();
+
+                        case 2:
+                            scene.sceneThree();
+                    }
+
+
 
                 case 2:
+                    System.out.println("Goodbye");
                     player = false;
-                    System.exit(0);
+//                    System.exit(0);
 
             }
 
