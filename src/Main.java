@@ -28,9 +28,24 @@ public class Main {
                     switch (choice){
                         case 1:
                             scene.sceneTwo();
+                            choice = s.nextInt();
+                            switch (choice) {
+                                case 1:
+                                    scene.tavernOne();
+                                case 2:
+                                case 3:
+
+                            }
 
                         case 2:
                             scene.sceneThree();
+                            choice = s.nextInt();
+                            switch (choice){
+                                case 1:
+                                case 2:
+                                case 3:
+                                    scene.sceneTwo();
+                            }
                     }
 
 
