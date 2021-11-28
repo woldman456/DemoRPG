@@ -1,28 +1,37 @@
-import java.io.InputStream;
 import java.util.Scanner;
 
 public class Main {
 
     public static Scanner s = new Scanner(System.in);
-    int Health = 10;
-    public static String name = "";
-    static boolean player = true;
+    static boolean play = true;
+
+
 
 
     public static void main(String[] args) {
-        Menu menu = new Menu();
+        startOfGame();
+    }
+
+    public static void startOfGame(){
+        Functions functions = new Functions();
+        functions.gatherInformation();
+        String name = s.next();
+        Player player = new Player(10, name);
         Scene scene = new Scene();
         int choice = 0;
 
-        while (player) {
+
+        while (play || player.getHealth() == 0) {
+
             System.out.println("Hello would you like to play a game");
             System.out.print("If yes press one, if No press two: ");
             choice = s.nextInt();
             switch (choice) {
                 case 1:
-                    menu.gatherInformation();
-                    name = s.next();
+
+
                     System.out.println("Great " + name + "lets get going!");
+
                     scene.sceneOne();
                     choice = s.nextInt();
                     switch (choice){
@@ -31,9 +40,11 @@ public class Main {
                             choice = s.nextInt();
                             switch (choice) {
                                 case 1:
-                                    scene.tavernOne();
+                                    scene.tavernOne(player);
                                 case 2:
+                                    scene.tavernTwo();
                                 case 3:
+                                    scene.tavernThree();
 
                             }
 
@@ -42,7 +53,9 @@ public class Main {
                             choice = s.nextInt();
                             switch (choice){
                                 case 1:
+                                    scene.roadOne();
                                 case 2:
+                                    scene.roadTwo();
                                 case 3:
                                     scene.sceneTwo();
                             }
@@ -52,12 +65,13 @@ public class Main {
 
                 case 2:
                     System.out.println("Goodbye");
-                    player = false;
-//                    System.exit(0);
+                    play = false;
+                    System.exit(0);
 
             }
 
         }
+        Functions.gameOver();
 
     }
 }

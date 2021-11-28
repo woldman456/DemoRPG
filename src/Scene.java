@@ -19,9 +19,22 @@ public class Scene {
         System.out.println("If you want to continue on the path press one, if you wish to go in press two\s" +
                 "if you want to call out press three");
 
+
     }
 
-    void tavernOne(){
+    void tavernOne(Player player){
+        System.out.println("you enter the tavern and a Troll strikes you for 10 damage");
+        player.setHealth(player.getHealth() - 10);
+        Functions.checkHealth(player);
+
+
+    }
+
+    void tavernTwo(){
+
+    }
+
+    void tavernThree(){
 
     }
 
@@ -34,6 +47,14 @@ public class Scene {
         System.out.println(
                 "Press one to continue on the path, press 2 to try the woods press 3 to go to the tavern."
         );
+
+    }
+
+    void roadOne(){
+
+    }
+
+    void roadTwo(){
 
     }
 }
