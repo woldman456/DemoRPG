@@ -4,19 +4,21 @@ public class Main {
 
     public static Scanner s = new Scanner(System.in);
     static boolean play = true;
+    static int health = 10;
     static String name = "";
-    static Player player = new Player(10, name);
+    static Player player = new Player(health, name);
     static Functions functions = new Functions();
     static Scene scene = new Scene();
 
 
     public static void main(String[] args) {
+        functions.gatherInformation();
+        name = s.next();
         startOfGame();
     }
 
     public static void startOfGame() {
-        functions.gatherInformation();
-        String name = s.next();
+
 
         int choice = 0;
 
@@ -36,25 +38,44 @@ public class Main {
                             scene.sceneTwo();
                             choice = s.nextInt();
                             switch (choice) {
-                                case 1:
+                                case 1 -> {
                                     scene.tavernOne(player);
-                                case 2:
-                                    scene.tavernTwo();
-                                case 3:
-                                    scene.tavernThree();
+                                    System.exit(0);
+                                    choice = s.nextInt();
+                                    switch (choice){
+                                        case 1:
+                                        scene.run();
+                                        case 2:
+                                            scene.tavernFight();
+                                    }
 
+                                }
+                                case 2 -> {
+                                    scene.tavernTwo();
+                                    System.exit(0);
+                                }
+                                case 3 -> {
+                                    scene.tavernThree();
+                                    System.exit(0);
+                                }
                             }
 
                         case 2:
                             scene.sceneThree();
                             choice = s.nextInt();
                             switch (choice) {
-                                case 1:
+                                case 1 -> {
                                     scene.roadOne();
-                                case 2:
+                                    System.exit(0);
+                                }
+                                case 2 -> {
                                     scene.roadTwo();
-                                case 3:
+                                    System.exit(0);
+                                }
+                                case 3 -> {
                                     scene.sceneTwo();
+                                    System.exit(0);
+                                }
                             }
                     }
 
@@ -67,7 +88,6 @@ public class Main {
             }
 
         }
-        Functions.gameOver();
 
     }
 }

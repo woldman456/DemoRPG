@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Functions {
     void gatherInformation() {
-        System.out.println("What is your name");
-        System.out.print("Enter Name: ");
+        System.out.print("What is your name: ");
+
     }
 
 
@@ -12,10 +12,12 @@ public class Functions {
         int health = player.getHealth();
         if (health == 0) {
             System.out.println("you health is " + health);
+            gameOver();
+            System.exit(0);
+        }else {
+            System.out.println("Your Heal is " + health);
+
         }
-        System.out.println("Your Heal is " + health);
-
-
     }
 
     public static void gameOver() {
@@ -25,6 +27,7 @@ public class Functions {
         String choice = sc.next().toLowerCase(Locale.ROOT);
         if (choice.equals("yes")) {
         Main.startOfGame();
+            System.exit(0);
 
         }else{
             System.out.println("GoodBye ");

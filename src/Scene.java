@@ -2,11 +2,11 @@ public class Scene {
     void sceneOne(){
         System.out.println("""
                 You are on a dark bridge\s
-                and before you stands is a crossroads.\s
+                and before you there is a crossroads.\s
                 There is thunder in the distances\s
                 and you need to find shelter.\s
-                To your left you can see an old build,that looks like a tavern.\s
-                However, there are no light in with in the windows that you can see\s
+                To your left you can see an old building, that looks like a tavern.\s
+                However, there are no light in the windows, that you can see\s
                 To the left you can see some farm field in the\s
                 distance.""");
         System.out.print("Press one to go left or two to go right ");
@@ -15,17 +15,17 @@ public class Scene {
     void sceneTwo(){
         System.out.println("""
                 You approach the old tavern and hear a racked from within\s
-                Do you go in, call out, or continue on the path""");
-        System.out.println("If you want to continue on the path press one, if you wish to go in press two\s" +
-                "if you want to call out press three");
+                Press one to go in, press two to call out, or press three to continue on the path""");
 
 
     }
 
     void tavernOne(Player player){
-        System.out.println("you enter the tavern and a Troll strikes you for 10 damage");
+        System.out.println("you enter the tavern and come face to face with a goblin who strikes you for one point of damage");
         player.setHealth(player.getHealth() - 10);
         Functions.checkHealth(player);
+        System.out.println("Press one to run or two to fight: ");
+
 
 
     }
@@ -35,6 +35,13 @@ public class Scene {
     }
 
     void tavernThree(){
+
+    }
+    void run(){
+
+    }
+
+    void tavernFight(){
 
     }
 
