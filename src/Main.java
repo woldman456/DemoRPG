@@ -6,7 +6,8 @@ public class Main {
     static boolean play = true;
     static int health = 10;
     static String name = "";
-    static Player player = new Player(health, name);
+    static Player player = new Player(health, name, 5, 15);
+    static Player goblin = new Player(5, "goblin", 1, 10);
     static Functions functions = new Functions();
     static Scene scene = new Scene();
 
@@ -18,12 +19,13 @@ public class Main {
     }
 
     public static void startOfGame() {
+        player.setHealth(10);
 
 
         int choice = 0;
 
 
-        while (play || player.getHealth() > 0) {
+
 
             System.out.println("Hello would you like to play a game");
             System.out.print("If yes press one, if No press two: ");
@@ -40,23 +42,26 @@ public class Main {
                             switch (choice) {
                                 case 1 -> {
                                     scene.tavernOne(player);
-                                    System.exit(0);
                                     choice = s.nextInt();
-                                    switch (choice){
-                                        case 1:
-                                        scene.run();
-                                        case 2:
-                                            scene.tavernFight();
+                                    switch (choice) {
+                                        case 1 -> {
+                                            scene.run();
+
+                                        }
+                                        case 2 -> {
+                                            scene.tavernFight(player, goblin);
+
+                                        }
                                     }
 
                                 }
                                 case 2 -> {
                                     scene.tavernTwo();
-                                    System.exit(0);
+
                                 }
                                 case 3 -> {
                                     scene.tavernThree();
-                                    System.exit(0);
+
                                 }
                             }
 
@@ -66,15 +71,15 @@ public class Main {
                             switch (choice) {
                                 case 1 -> {
                                     scene.roadOne();
-                                    System.exit(0);
+
                                 }
                                 case 2 -> {
                                     scene.roadTwo();
-                                    System.exit(0);
+
                                 }
                                 case 3 -> {
                                     scene.sceneTwo();
-                                    System.exit(0);
+
                                 }
                             }
                     }
@@ -90,4 +95,4 @@ public class Main {
         }
 
     }
-}
+

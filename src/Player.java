@@ -1,13 +1,16 @@
 public class Player {
     private int health;
     private String name;
+    private int damage, AC;
 
     public Player() {
     }
 
-    public Player(int health, String name) {
+    public Player(int health, String name, int damage, int AC) {
         this.health = health;
         this.name = name;
+        this.damage = damage;
+        this.AC = AC;
     }
 
     public int getHealth() {
@@ -24,5 +27,21 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getAC() {
+        return AC;
+    }
+
+    public void setAC(int AC) {
+        this.AC = AC;
     }
 }

@@ -1,4 +1,7 @@
+
 public class Scene {
+
+
     void sceneOne(){
         System.out.println("""
                 You are on a dark bridge\s
@@ -22,7 +25,7 @@ public class Scene {
 
     void tavernOne(Player player){
         System.out.println("you enter the tavern and come face to face with a goblin who strikes you for one point of damage");
-        player.setHealth(player.getHealth() - 10);
+        player.setHealth(player.getHealth() - 1);
         Functions.checkHealth(player);
         System.out.println("Press one to run or two to fight: ");
 
@@ -38,10 +41,17 @@ public class Scene {
 
     }
     void run(){
+        System.out.println("You lose...");
+        Functions.gameOver();
 
     }
 
-    void tavernFight(){
+    void tavernFight(Player player, Player monster){
+        Functions.combat(player, monster);
+        Functions.checkHealth(player);
+        System.out.println("You win, thanks for playing ");
+        System.exit(0);
+
 
     }
 
