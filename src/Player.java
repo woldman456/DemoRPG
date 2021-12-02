@@ -1,16 +1,17 @@
 public class Player {
     private int health;
     private String name;
-    private int damage, AC;
+    private int AC;
+    private Weapon weapon;
 
     public Player() {
     }
 
-    public Player(int health, String name, int damage, int AC) {
+    public Player(int health, String name, int AC, Weapon weapon) {
         this.health = health;
         this.name = name;
-        this.damage = damage;
         this.AC = AC;
+        this.weapon = weapon;
     }
 
     public int getHealth() {
@@ -29,19 +30,19 @@ public class Player {
         this.name = name;
     }
 
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
     public int getAC() {
         return AC;
     }
 
     public void setAC(int AC) {
         this.AC = AC;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 }

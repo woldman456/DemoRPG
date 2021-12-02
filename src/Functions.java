@@ -37,18 +37,21 @@ public class Functions {
     }
 
     public static void combat(Player player, Player monster){
-        Random rnd = new Random();
-        int d20 = rnd.nextInt(1,20);
+
 
         while (player.getHealth() >0 && monster.getHealth() >0){
-            if(d20>=monster.getAC()){
-                System.out.println("you hit the " + monster.getName() + " for " + player.getDamage());
-                monster.setHealth(monster.getHealth()- player.getDamage());
+            if(Main.d20>=monster.getAC()){
+                System.out.println("you hit the " + monster.getName() + " for " + player.getWeapon().getDamage());
+                monster.setHealth(monster.getHealth()- player.getWeapon().getDamage());
+            }else {
+                System.out.println("you missed a " + monster.getName());
             }
-            if(d20>= player.getAC()){
-                System.out.println("a " + monster.getName() + "hit you for " + monster.getDamage()+ " your current " +
+            if(Main.d20>= player.getAC()){
+                System.out.println("a " + monster.getName() + "hit you for " + monster.getWeapon().getDamage()+ " your current " +
                         "health is");
-                player.setHealth(player.getHealth() - monster.getDamage());
+                player.setHealth(player.getHealth() - monster.getWeapon().getDamage());
+            }else {
+                System.out.println("You dodged a strike from a " + monster.getName());
             }
         }
 

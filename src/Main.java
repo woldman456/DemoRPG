@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -6,8 +7,12 @@ public class Main {
     static boolean play = true;
     static int health = 10;
     static String name = "";
-    static Player player = new Player(health, name, 5, 15);
-    static Player goblin = new Player(5, "goblin", 1, 10);
+    static Random rnd = new Random();
+    static int d20 = rnd.nextInt(1,20);
+    static int d5 = new Random().nextInt(1,5);
+    static Weapon sword = new Weapon("rusty sword", d5);
+    static Player player = new Player(health, name, 15, sword);
+    static Player goblin = new Player(5, "goblin", 10, sword);
     static Functions functions = new Functions();
     static Scene scene = new Scene();
 
