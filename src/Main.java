@@ -6,12 +6,9 @@ public class Main {
     public static Scanner s = new Scanner(System.in);
     static boolean play = true;
     static int health = 10;
-    static String name = "";
-    static Random rnd = new Random();
-    static int d20 = rnd.nextInt(1,20);
-    static int d5 = new Random().nextInt(1,5);
+    static int d5 = new Random().nextInt(5) +1;
     static Weapon sword = new Weapon("rusty sword", d5);
-    static Player player = new Player(health, name, 15, sword);
+    static Player player = new Player(health, null, 15, sword);
     static Player goblin = new Player(5, "goblin", 10, sword);
     static Functions functions = new Functions();
     static Scene scene = new Scene();
@@ -19,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
         functions.gatherInformation();
-        name = s.next();
+        player.setName(s.next());
         startOfGame();
     }
 
@@ -37,7 +34,7 @@ public class Main {
             choice = s.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("Great " + name + "lets get going!");
+                    System.out.println("Great " + player.getName() + "lets get going!");
                     scene.sceneOne();
                     choice = s.nextInt();
                     switch (choice) {
