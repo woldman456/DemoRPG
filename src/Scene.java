@@ -37,20 +37,24 @@ public class Scene {
 
     }
 
-    void tavernThree(){
-
+    void run(Player monster){
+        System.out.println("You run out in to the rain\s" +
+                "the " + monster.getName() + " does screams after you,\s" +
+                "but does not follow you");
     }
-    void run(){
-        System.out.println("You lose...");
-        Functions.gameOver();
 
+    void longRoadOne(){
+        System.out.println("The rain starts to beat down and the wind is picking up.\s" +
+                "You do not see anything in the distance if you continue the way you were going.\s" +
+                "If you want to continue on the path press one, if you want want to turn back press two.");
     }
 
     void tavernFight(Player player, Player monster){
         Functions.combat(player, monster);
         Functions.checkHealth(player);
-        System.out.println("You win, thanks for playing ");
-        System.exit(0);
+        System.out.println("You have defeated the " + monster.getName() + " do you want to search the tavern for\s" +
+                " additional threats");
+
 
 
     }
