@@ -24,7 +24,8 @@ public class Scene {
     }
 
     void tavernOne(Player player){
-        System.out.println("you enter the tavern and come face to face with a goblin who strikes you for one point of damage");
+        System.out.println("you enter the tavern and come face to face with a goblin who strikes you\s" +
+                " for one point of damage");
         player.setHealth(player.getHealth() - 1);
         Functions.checkHealth(player);
         System.out.println("Press one to run or two to fight: ");
@@ -53,7 +54,9 @@ public class Scene {
         Functions.combat(player, monster);
         Functions.checkHealth(player);
         System.out.println("You have defeated the " + monster.getName() + " do you want to search the tavern for\s" +
-                " additional threats");
+                " additional threats or search the " + monster.getName() + " for loot?");
+        System.out.print("if you want to search the " + monster.getName() + " press one \s" +
+                "if you want to search for additional threats press two: ");
 
 
 
