@@ -5,7 +5,7 @@ public class Main {
     public static Scanner s = new Scanner(System.in);
     static boolean play = true;
     static int health = 10;
-
+    static Weapon sword2 = new Weapon("club", 3, "bashing");
     static Weapon sword = new Weapon("rusty sword", 5, "slashing");
     static Player player = new Player(health, null, 15, sword);
     static Player goblin = new Player(5, "goblin", 10, sword);
