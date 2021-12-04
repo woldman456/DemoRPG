@@ -40,7 +40,7 @@ public class Scene {
 
     void run(Player monster){
         System.out.println("You run out in to the rain\s" +
-                "the " + monster.getName() + " does screams after you,\s" +
+                "the " + monster.getName() + " screams after you,\s" +
                 "but does not follow you");
     }
 
@@ -61,6 +61,9 @@ public class Scene {
 
 
     }
+
+    void tavernSearch(){}
+    void tavernLooting(){}
 
     void sceneThree(){
         System.out.println("""

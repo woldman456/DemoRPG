@@ -65,6 +65,13 @@ public class Main {
                                         }
                                         case 2 -> {
                                             scene.tavernFight(player, goblin);
+                                            choice = s.nextInt();
+                                            switch (choice){
+                                                case 1:
+                                                    scene.tavernSearch();
+                                                case 2:
+                                                    scene.tavernLooting();
+                                            }
 
                                         }
                                     }
