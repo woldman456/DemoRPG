@@ -1,7 +1,4 @@
-import java.sql.SQLOutput;
-import java.util.Random;
 import java.util.Scanner;
-import java.util.random.RandomGenerator;
 
 public class Main {
 
@@ -9,7 +6,7 @@ public class Main {
     static boolean play = true;
     static int health = 10;
 
-    static Weapon sword = new Weapon("rusty sword", 2);
+    static Weapon sword = new Weapon("rusty sword", 5, "slashing");
     static Player player = new Player(health, null, 15, sword);
     static Player goblin = new Player(5, "goblin", 10, sword);
     static Functions functions = new Functions();
@@ -119,3 +116,4 @@ public class Main {
         }
     }
 }
+

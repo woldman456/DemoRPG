@@ -1,13 +1,15 @@
 public class Weapon {
     private String name;
-    private int damage;
+    private int damageMax;
+    private String damageType;
 
     public Weapon() {
     }
 
-    public Weapon(String name, int damage) {
+    public Weapon(String name, int damageMax, String damageType) {
         this.name = name;
-        this.damage = damage;
+        this.damageMax = damageMax;
+        this.damageType = damageType;
     }
 
     public String getName() {
@@ -18,11 +20,19 @@ public class Weapon {
         this.name = name;
     }
 
-    public int getDamage() {
-        return damage;
+    public int getDamageMax() {
+        return damageMax;
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
+    public void setDamageMax(int damageMax) {
+        this.damageMax = damageMax;
+    }
+
+    public String getDamageType() {
+        return damageType;
+    }
+
+    public void setDamageType(String damageType) {
+        this.damageType = damageType;
     }
 }
