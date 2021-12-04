@@ -62,7 +62,9 @@ public class Scene {
 
     }
 
-    void tavernSearch(){}
+    void tavernSearch(){
+
+    }
     void tavernLooting(){}
 
     void sceneThree(){

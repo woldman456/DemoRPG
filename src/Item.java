@@ -2,14 +2,14 @@ public class Item {
     private String name;
     private String description;
     private Weapon weapon;
+    private Coins coins;
 
     public Item() {
     }
 
-    public Item(String name, String description, Weapon weapon) {
+    public Item(String name, String description) {
         this.name = name;
         this.description = description;
-        this.weapon = weapon;
     }
 
     public String getName() {
@@ -34,5 +34,13 @@ public class Item {
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+    }
+
+    public Coins getCoins() {
+        return coins;
+    }
+
+    public void setCoins(Coins coins) {
+        this.coins = coins;
     }
 }

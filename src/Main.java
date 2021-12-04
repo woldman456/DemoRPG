@@ -11,6 +11,8 @@ public class Main {
     static Player goblin = new Player(5, "goblin", 10, sword);
     static Functions functions = new Functions();
     static Scene scene = new Scene();
+    static Coins gold = new Coins("gold");
+    static Coins copper = new Coins("copper");
 
 
     public static void main(String[] args) {

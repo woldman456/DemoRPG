@@ -40,9 +40,8 @@ public class Functions {
 
 
         while (player.getHealth() >0 && monster.getHealth() >0){
-            Random rnd = new Random();
             int pd20 = Dice.d20();
-            int pDamage = rnd.nextInt(player.getWeapon().getDamageMax())+1;
+            int pDamage = Dice.attack(player.getWeapon().getDamageMax());
             if(pd20 >=monster.getAC()){
 
                 System.out.println("you do " + pDamage + " of " + player.getWeapon().getDamageType() + " damage " +
@@ -53,7 +52,7 @@ public class Functions {
             }
             int md20 = Dice.d20();
             if(md20 >= player.getAC()){
-                int mDamage = rnd.nextInt(monster.getWeapon().getDamageMax())+1;
+                int mDamage = Dice.attack(monster.getWeapon().getDamageMax());
                 System.out.println("a " + monster.getName() + " does " + mDamage + "worth of " +
                         monster.getWeapon().getDamageType() + " to you. Your current health is " +
                         player.getHealth());
