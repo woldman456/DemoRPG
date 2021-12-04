@@ -40,19 +40,22 @@ public class Functions {
 
 
         while (player.getHealth() >0 && monster.getHealth() >0){
-            Random rnd = new Random();
-            int pd20 = rnd.nextInt(20)+1;
-            int md20 = rnd.nextInt(20)+1;
-            if(pd20>=monster.getAC()){
-                System.out.println("you hit the " + monster.getName() + " for " + player.getWeapon().getDamage());
-                monster.setHealth(monster.getHealth()- player.getWeapon().getDamage());
+//            Random rnd = new Random();
+            int pd20 = Dice.d20();
+            int pDamage = player.getWeapon().getDamage();
+            if(pd20 >=monster.getAC()){
+
+                System.out.println("you hit the " + monster.getName() + " for " + pDamage);
+                monster.setHealth(monster.getHealth()- pDamage);
             }else {
                 System.out.println("you missed a " + monster.getName());
             }
-            if(md20>= player.getAC()){
-                System.out.println("a " + monster.getName() + " hit you for " + monster.getWeapon().getDamage()+ " your current health is " +
+            int md20 = Dice.d20();
+            if(md20 >= player.getAC()){
+                int mDamage = monster.getWeapon().getDamage();
+                System.out.println("a " + monster.getName() + " hit you for " + mDamage + " your current health is " +
                         player.getHealth());
-                player.setHealth(player.getHealth() - monster.getWeapon().getDamage());
+                player.setHealth(player.getHealth() - mDamage);
             }else {
                 System.out.println("You dodged a strike from a " + monster.getName());
             }

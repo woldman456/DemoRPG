@@ -1,11 +1,11 @@
 public class Weapon {
     private String name;
-    private Integer damage;
+    private int damage;
 
     public Weapon() {
     }
 
-    public Weapon(String name, Integer damage) {
+    public Weapon(String name, int damage) {
         this.name = name;
         this.damage = damage;
     }
@@ -18,11 +18,11 @@ public class Weapon {
         this.name = name;
     }
 
-    public Integer getDamage() {
+    public int getDamage() {
         return damage;
     }
 
-    public void setDamage(Integer damage) {
+    public void setDamage(int damage) {
         this.damage = damage;
     }
 }
