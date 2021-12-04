@@ -1,13 +1,15 @@
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.random.RandomGenerator;
 
 public class Main {
 
     public static Scanner s = new Scanner(System.in);
     static boolean play = true;
     static int health = 10;
-    static int d5 = new Random().nextInt(5) +1;
-    static Weapon sword = new Weapon("rusty sword", d5);
+
+    static Weapon sword = new Weapon("rusty sword", 2);
     static Player player = new Player(health, null, 15, sword);
     static Player goblin = new Player(5, "goblin", 10, sword);
     static Functions functions = new Functions();
@@ -16,20 +18,23 @@ public class Main {
 
     public static void main(String[] args) {
         functions.gatherInformation();
-        player.setName(s.next());
-        startOfGame();
+        try {
+            player.setName(s.next());
+            startOfGame();
+        } catch (Exception e) {
+            System.out.println("invalid inout please try again: ");
+        }
+
     }
 
     public static void startOfGame() {
         player.setHealth(10);
 
+        try {
 
-        int choice = 0;
+            int choice = 0;
 
-
-
-
-            System.out.println("Hello would you like to play a game");
+            System.out.println("Hello " + player.getName() + " would you like to play a game");
             System.out.print("If yes press one, if No press two: ");
             choice = s.nextInt();
             switch (choice) {
@@ -47,11 +52,26 @@ public class Main {
                                     choice = s.nextInt();
                                     switch (choice) {
                                         case 1 -> {
-                                            scene.run();
+                                            scene.run(goblin);
+                                            choice = s.nextInt();
+                                            switch (choice) {
+                                                case 1:
+                                                    scene.longRoadOne();
+
+                                                case 2:
+                                                    scene.sceneThree();
+                                            }
 
                                         }
                                         case 2 -> {
                                             scene.tavernFight(player, goblin);
+                                            choice = s.nextInt();
+                                            switch (choice){
+                                                case 1:
+                                                    scene.tavernSearch();
+                                                case 2:
+                                                    scene.tavernLooting();
+                                            }
 
                                         }
                                     }
@@ -62,7 +82,7 @@ public class Main {
 
                                 }
                                 case 3 -> {
-                                    scene.tavernThree();
+                                    scene.longRoadOne();
 
                                 }
                             }
@@ -94,7 +114,8 @@ public class Main {
 
             }
 
+        } catch (Exception e) {
+            System.out.println("invalid input please try again: ");
         }
-
     }
-
+}

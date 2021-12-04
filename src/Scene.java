@@ -24,7 +24,8 @@ public class Scene {
     }
 
     void tavernOne(Player player){
-        System.out.println("you enter the tavern and come face to face with a goblin who strikes you for one point of damage");
+        System.out.println("you enter the tavern and come face to face with a goblin who strikes you\s" +
+                " for one point of damage");
         player.setHealth(player.getHealth() - 1);
         Functions.checkHealth(player);
         System.out.println("Press one to run or two to fight: ");
@@ -37,23 +38,32 @@ public class Scene {
 
     }
 
-    void tavernThree(){
-
+    void run(Player monster){
+        System.out.println("You run out in to the rain\s" +
+                "the " + monster.getName() + " screams after you,\s" +
+                "but does not follow you");
     }
-    void run(){
-        System.out.println("You lose...");
-        Functions.gameOver();
 
+    void longRoadOne(){
+        System.out.println("The rain starts to beat down and the wind is picking up.\s" +
+                "You do not see anything in the distance if you continue the way you were going.\s" +
+                "If you want to continue on the path press one, if you want want to turn back press two.");
     }
 
     void tavernFight(Player player, Player monster){
         Functions.combat(player, monster);
         Functions.checkHealth(player);
-        System.out.println("You win, thanks for playing ");
-        System.exit(0);
+        System.out.println("You have defeated the " + monster.getName() + " do you want to search the tavern for\s" +
+                " additional threats or search the " + monster.getName() + " for loot?");
+        System.out.print("if you want to search the " + monster.getName() + " press one \s" +
+                "if you want to search for additional threats press two: ");
+
 
 
     }
+
+    void tavernSearch(){}
+    void tavernLooting(){}
 
     void sceneThree(){
         System.out.println("""
