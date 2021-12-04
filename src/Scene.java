@@ -1,7 +1,7 @@
 
 public class Scene {
 
-
+static
     void sceneOne(){
         System.out.println("""
                 You are on a dark bridge\s
@@ -29,8 +29,6 @@ public class Scene {
         player.setHealth(player.getHealth() - 1);
         Functions.checkHealth(player);
         System.out.println("Press one to run or two to fight: ");
-
-
 
     }
 
@@ -65,7 +63,25 @@ public class Scene {
     void tavernSearch(){
 
     }
-    void tavernLooting(){}
+    void tavernLooting(){
+        Weapon weapon = Main.club;
+        Coins coins = Main.copper;
+        coins.setAmount(5);
+        System.out.println("You search the Goblin and find a " + weapon.getName() + " and " +
+                coins.getAmount() + " " +coins.getName() + " coins");
+        int choice = Main.s.nextInt();
+        System.out.print("If you want to take both the club and the coins press one, if you want to just \s" +
+                "take the coins press two, if you want to take just the club press three, if you want to \s " +
+                "leave everything press four");
+        switch (choice){
+            case 1:
+            Functions.loot(weapon);
+            case 2:
+            case 3:
+            case 4:
+
+        }
+    }
 
     void sceneThree(){
         System.out.println("""

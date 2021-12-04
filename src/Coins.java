@@ -1,4 +1,4 @@
-public class Coins {
+public class Coins extends Item{
     private String name;
     private double amount;
 

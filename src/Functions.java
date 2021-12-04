@@ -64,5 +64,11 @@ public class Functions {
 
     }
 
+    public static void loot(Item item){
+        Player player = Main.player;
+        player.setInventory(item);
+
+    }
+
 }
 
