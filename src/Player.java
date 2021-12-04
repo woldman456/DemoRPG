@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+
 public class Player {
     private int health;
     private String name;
     private int AC;
     private Weapon weapon;
+    private ArrayList<Item> inventory;
 
     public Player() {
     }
@@ -45,4 +48,13 @@ public class Player {
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
+
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ArrayList<Item> inventory) {
+        this.inventory = inventory;
+    }
+
 }
