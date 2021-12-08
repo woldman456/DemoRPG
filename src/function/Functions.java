@@ -1,10 +1,15 @@
+package function;
+
+import model.Dice;
+import model.Player;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Functions {
-    void gatherInformation() {
+    static void gatherInformation() {
         System.out.print("What is your name: ");
 
     }

@@ -12,7 +12,7 @@ have had to be reformatted several times throughout the course of creating the g
 After these basic functions were created I proceed in creating combat method. This method takes a player object and
 monster object and runs through a while loop until one or the others' health reaches zero. This class imports the Java 
 Random utility and for weapon damage which the max is retrieved through a get method. The chance to hit is gotten, through
-a call to a method in the Dice class. 
+a call to a method in the model.Dice class. 
 
 
 ### Issues :

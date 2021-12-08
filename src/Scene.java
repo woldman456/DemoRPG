@@ -1,3 +1,7 @@
+import function.Functions;
+import model.Coins;
+import model.Player;
+import model.Weapon;
 
 public class Scene {
 
