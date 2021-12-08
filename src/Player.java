@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Player {
     private int health;
     private String name;
     private int AC;
     private Weapon weapon;
-    private ArrayList<Item> inventory;
+
 
     public Player() {
     }
@@ -49,12 +50,5 @@ public class Player {
         this.weapon = weapon;
     }
 
-    public ArrayList<Item> getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(ArrayList<Item> inventory) {
-        this.inventory = inventory;
-    }
 
 }

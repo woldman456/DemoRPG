@@ -1,5 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Functions {
@@ -40,9 +41,8 @@ public class Functions {
 
 
         while (player.getHealth() >0 && monster.getHealth() >0){
-            Random rnd = new Random();
             int pd20 = Dice.d20();
-            int pDamage = rnd.nextInt(player.getWeapon().getDamageMax())+1;
+            int pDamage = Dice.attack(player.getWeapon().getDamageMax());
             if(pd20 >=monster.getAC()){
 
                 System.out.println("you do " + pDamage + " of " + player.getWeapon().getDamageType() + " damage " +
@@ -53,7 +53,7 @@ public class Functions {
             }
             int md20 = Dice.d20();
             if(md20 >= player.getAC()){
-                int mDamage = rnd.nextInt(monster.getWeapon().getDamageMax())+1;
+                int mDamage = Dice.attack(monster.getWeapon().getDamageMax());
                 System.out.println("a " + monster.getName() + " does " + mDamage + "worth of " +
                         monster.getWeapon().getDamageType() + " to you. Your current health is " +
                         player.getHealth());
@@ -61,6 +61,15 @@ public class Functions {
             }else {
                 System.out.println("You dodged a strike from a " + monster.getName());
             }
+        }
+
+    }
+
+    public static void loot(String item){
+        List<String> inventory = new ArrayList<>();
+        inventory.add(item);
+        for (String s : inventory) {
+            System.out.println("your Inventory contains a: " + s);
         }
 
     }
