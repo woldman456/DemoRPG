@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     public static Scanner s = new Scanner(System.in);
+    public static Scanner s = new Scanner(System.in);
     static int health = 10;
     static Weapon club= new Weapon("club", 3, "bashing");
     static Weapon sword = new Weapon("rusty sword", 5, "slashing");
