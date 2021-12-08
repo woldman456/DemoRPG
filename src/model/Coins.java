@@ -1,3 +1,5 @@
+package model;
+
 public class Coins extends Item{
     private String name;
     private double amount;

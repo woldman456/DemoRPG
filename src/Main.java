@@ -1,15 +1,18 @@
+import function.Functions;
+import model.Coins;
+import model.Player;
+import model.Weapon;
+
 import java.util.Scanner;
 
 public class Main {
 
-    public static Scanner s = new Scanner(System.in);
     public static Scanner s = new Scanner(System.in);
     static int health = 10;
     static Weapon club= new Weapon("club", 3, "bashing");
     static Weapon sword = new Weapon("rusty sword", 5, "slashing");
     static Player player = new Player(health, null, 15, sword);
     static Player goblin = new Player(5, "goblin", 10, sword);
-    static Functions functions = new Functions();
     static Scene scene = new Scene();
     static Coins gold = new Coins("gold");
     static Coins copper = new Coins("copper");
@@ -20,7 +23,7 @@ public class Main {
         Functions.loot(sword.getName());
         copper.setAmount(4);
         Functions.loot(copper.getName());
-        functions.gatherInformation();
+        Functions.gatherInformation();
         startOfGame();
 
     }
