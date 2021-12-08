@@ -9,7 +9,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Functions {
-    static void gatherInformation() {
+    static public void gatherInformation() {
         System.out.print("What is your name: ");
 
     }
