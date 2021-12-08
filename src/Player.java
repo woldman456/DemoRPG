@@ -6,7 +6,6 @@ public class Player {
     private String name;
     private int AC;
     private Weapon weapon;
-    private List<Item> inventory;
 
 
     public Player() {
@@ -51,12 +50,5 @@ public class Player {
         this.weapon = weapon;
     }
 
-    public List<Item> getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(ArrayList<Item> inventory) {
-        this.inventory = inventory;
-    }
 
 }

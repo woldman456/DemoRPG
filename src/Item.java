@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.function.IntFunction;
 
-public class Item extends ArrayList<Item> {
+public class Item {
     private String name;
     private String description;
     private Weapon weapon;
@@ -47,8 +45,5 @@ public class Item extends ArrayList<Item> {
         this.coins = coins;
     }
 
-    @Override
-    public <T> T[] toArray(IntFunction<T[]> generator) {
-        return super.toArray(generator);
-    }
+
 }

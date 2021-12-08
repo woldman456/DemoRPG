@@ -1,5 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Functions {
@@ -64,9 +65,12 @@ public class Functions {
 
     }
 
-    public static void loot(Item item){
-        Player player = Main.player;
-        player.setInventory(item);
+    public static void loot(String item){
+        List<String> inventory = new ArrayList<>();
+        inventory.add(item);
+        for (String s : inventory) {
+            System.out.println("your Inventory contains a: " + s);
+        }
 
     }
 

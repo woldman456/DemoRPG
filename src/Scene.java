@@ -1,7 +1,7 @@
 
 public class Scene {
 
-static
+
     void sceneOne(){
         System.out.println("""
                 You are on a dark bridge\s
@@ -75,7 +75,7 @@ static
                 "leave everything press four");
         switch (choice){
             case 1:
-            Functions.loot(weapon);
+            Functions.loot(weapon.getName());
             case 2:
             case 3:
             case 4:

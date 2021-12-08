@@ -12,36 +12,15 @@ public class Main {
     static Scene scene = new Scene();
     static Coins gold = new Coins("gold");
     static Coins copper = new Coins("copper");
-    static Item item = club.getWeapon();
+
 
 
     public static void main(String[] args) {
+        Functions.loot(sword.getName());
         copper.setAmount(4);
-        player.setInventory(sword);
-        player.setInventory(copper);
+        Functions.loot(copper.getName());
         functions.gatherInformation();
-
-        if (player.getInventory().isEmpty()){
-            System.out.println("empty");
-        }else {
-            System.out.println("full");
-        }
-
-        for (int i = 0; i < player.getInventory().toArray().length; i++) {
-            System.out.println(player.getInventory().get(i).getName());}
-
-        try {
-            player.setName(s.next());
-            if (player.getInventory().isEmpty()){
-                System.out.println("empty");
-            }
-
-            for (int i = 0; i < player.getInventory().size(); i++) {
-                System.out.println(player.getInventory().get(i).getName());}
-            startOfGame();
-        } catch (Exception e) {
-            System.out.println("invalid inout please try again: ");
-        }
+        startOfGame();
 
     }
 
